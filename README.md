@@ -590,16 +590,3 @@ docker run -p 3000:3000 --env-file .env zorvyn:latest
    - Budget planning & forecasting
    - Two-factor authentication
 
-## 📝 License
-
-MIT
-
-## 👤 Author
-
-Praveen TM
-
----
-
-**Last Updated**: April 1, 2026
-
-For support or questions, please refer to the test suites in `__tests__/` for usage examples.
