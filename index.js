@@ -32,7 +32,7 @@ app.use("/users", userRoutes);
 // GLOBAL ERROR HANDLER
 //
 app.use((err, req, res, next) => {
-  console.error("🔥 ERROR:", err); // add this
+  console.error("🔥 ERROR:", err); 
   res.status(500).json({
     error: err.message, 
   });
