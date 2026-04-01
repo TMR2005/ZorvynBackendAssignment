@@ -2,7 +2,7 @@
 
 A production-ready Node.js backend for a finance dashboard system with role-based access control, financial record management, and comprehensive analytics APIs.
 
-## 🚀 Features Implemented
+## Features Implemented
 
 ### 1. **Authentication & Authorization**
 - JWT-based token authentication with secure password hashing (bcryptjs)
@@ -53,7 +53,7 @@ A production-ready Node.js backend for a finance dashboard system with role-base
 - Dashboard analytics tests (aggregations, role-based data scoping)
 - Jest + Supertest for end-to-end testing
 
-## 🏗️ Architecture & Design
+## Architecture & Design
 
 ### Project Structure
 ```
@@ -127,7 +127,7 @@ A production-ready Node.js backend for a finance dashboard system with role-base
 - **Rationale**: Minimal dependencies, explicit validation logic
 - **Tradeoff**: More verbose, less reusable; consider Zod for production scale
 
-## 🛠️ Setup & Installation
+##  Setup & Installation
 
 ### Prerequisites
 - Node.js v24+
@@ -138,7 +138,8 @@ A production-ready Node.js backend for a finance dashboard system with role-base
 
 1. **Clone and install dependencies**
    ```bash
-   cd /Users/praveentmr/Personal/Zorvyn
+   git clone https://github.com/TMR2005/ZorvynBackendAssignment.git
+   cd ZorvynBackendAssignment
    npm install
    ```
 
@@ -177,7 +178,7 @@ curl http://localhost:3000
 # Response: "API is running 🚀"
 ```
 
-## 📚 API Documentation
+##  API Documentation
 
 ### Authentication Endpoints
 
