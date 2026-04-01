@@ -1,0 +1,74 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  VIEWER
+  ANALYST
+  ADMIN
+}
+
+enum UserStatus {
+  ACTIVE
+  INACTIVE
+}
+
+enum RecordType {
+  INCOME
+  EXPENSE
+}
+
+//
+// MODELS
+//
+
+model User {
+  id        String     @id @default(uuid())
+  name      String
+  email     String     @unique
+  password  String
+  role      Role       @default(VIEWER)
+  status    UserStatus @default(ACTIVE)
+
+  records   Record[]
+
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  @@index([role])
+  @@index([email])
+}
+
+model Record {
+  id         String      @id @default(uuid())
+  amount     Float
+  type       RecordType
+  category   String
+  date       DateTime
+  notes      String?
+
+  createdBy  String
+  user       User        @relation(fields: [createdBy], references: [id], onDelete: Cascade)
+
+  isDeleted  Boolean     @default(false)
+
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
+
+  @@index([type])
+  @@index([category])
+  @@index([date])
+  @@index([createdBy])
+  @@index([type, date])
+  @@index([category, date])
+}
