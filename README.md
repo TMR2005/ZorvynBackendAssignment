@@ -1,4 +1,4 @@
-# Zorvyn - Finance Dashboard Backend
+# Finance Dashboard Backend
 
 A production-ready Node.js backend for a finance dashboard system with role-based access control, financial record management, and comprehensive analytics APIs.
 
